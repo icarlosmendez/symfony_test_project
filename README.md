@@ -3,14 +3,30 @@ A quick trip to a functional Symfony project with FOSUserBundle installed.
 
 ### Assumptions:
 You are working on a *nix system (haven't done this on Windows)
+
 You want to create a Symfony project based on the latest stable release
+
 You want a fully functioning authentication/user creation system
+
 You will be using a database to persist data
+
 You will be using 'Doctrine' ORM
 
 ### Prerequisites:
 You have installed PHP >=5.3.9
+
 You have installed MySQL or MariaDB (most of this will work with other db's but no testing has been done)
+
+You have installed Composer according to these instructions (Linux and Mac OS X)
+
+```
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+```
+```
+php installer
+sudo mv composer.phar /usr/local/bin/composer
+```
 
 ### Let's do this:
 - Clone project into your chosen base directory
