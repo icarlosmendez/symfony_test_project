@@ -13,7 +13,7 @@ You will be using a database to persist data
 You will be using 'Doctrine' ORM
 
 ### Prerequisites: 
-**These steps are mandatory for working with Symfony**
+**These steps are mandatory for working with Symfony 2.8.* LTS**
 
 - You have installed PHP >=5.3.9
 
@@ -56,7 +56,7 @@ sudo mv composer.phar /usr/local/bin/composer
     - `bash setup.sh`
     - Watch as the magic happens!
 - What you get 
-    - Symfony 2.8 LTS
+    - Symfony 2.8.* LTS
     - FOSUserBundle 2.0@dev
 - This build script will culminate with:
     - The launch of your project in the browser
