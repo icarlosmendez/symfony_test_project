@@ -16,7 +16,7 @@ You have installed MySQL or MariaDB (most of this will work with other db's but 
 - Clone project into your chosen base directory
     - In terminal navigate to your base directory
     - `git clone https://github.com/icarlosmendez/symfony_test_project`
-    - `cd` into the project directory
+    - `cd symfony_test_project` into the project directory
     - `ls` to verify that you have two files
         - README.md and setup.sh  
 - Set the projectname variable
