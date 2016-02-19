@@ -40,6 +40,7 @@ sudo mv composer.phar /usr/local/bin/composer
 php installer
 sudo mv composer.phar /usr/local/bin/composer
 ```
+- Further reading about these topics [here](https://symfony.com/doc/2.8/book/installation.html)
 
 ### Okay! Let's do this:
 - Clone project into your chosen base directory
@@ -64,7 +65,7 @@ sudo mv composer.phar /usr/local/bin/composer
 - From here you will configure FOSUserBundle
 
 ### Adapted from: 'Getting Started With FOSUserBundle'
-http://symfony.com/doc/current/bundles/FOSUserBundle/index.html
+FOSUserBundle guidance [here](http://symfony.com/doc/current/bundles/FOSUserBundle/index.html)
 
 #### Translations
 This feature uses a list of text substitutions in a key => value pair technique.
@@ -235,9 +236,7 @@ In order to use the built-in email functionality (confirmation of the account, r
 
 #### Step 6: Add the fos_user service
 
-This is not in the official documentation but without this insertion, courtesy of:
-http://stackoverflow.com/questions/35031401/symfony-2-7-3-doctrine-you-have-requested-a-non-existent-service-fos-user/35032097
-your schema update in step 7 won’t work. It's time for them to update the docs!
+This is not in the official documentation but without this insertion, courtesy of [this post on Stack Overflow](http://stackoverflow.com/questions/35031401/symfony-2-7-3-doctrine-you-have-requested-a-non-existent-service-fos-user/35032097) your schema update in step 7 won’t work. It's time for them to update the docs!
 
 _YAML_
 
@@ -271,7 +270,7 @@ For ORM run the following command:
 
 `app/console doctrine:schema:update --force`
 
-For other db types see the official docs. Link is at the top-ish.
+For other db types see the official docs [here](http://symfony.com/doc/current/bundles/FOSUserBundle/index.html).
 
 
 #### Step 8: Test the functionality of the forms
@@ -288,8 +287,7 @@ Congrats test, your account is now activated.
 
 Go ahead and log out and add the extension `/login` and you should see a login form.
 
-Log in as your test user and you should be authenticated against the database and logged in. If you look down at the bottom of the browser you'll see the profiler panel
-and it should show you logged in as your test user and a whole bunch of other interesting statistics that are useful during development and testing.
+Log in as your test user and you should be authenticated against the database and logged in. If you look down at the bottom of the browser you'll see the profiler panel and it should show you logged in as your test user and a whole bunch of other interesting statistics that are useful during development and testing.
 
 I hope that you got through that scot-free and that you now have a symfony project, set up with a basic configuration of the FOSUserBundle ready for further development.
 The next step is to enable the overriding of the templates that come with FOSUserBundle as you will surely need to customize these forms for your site's look and feel.
