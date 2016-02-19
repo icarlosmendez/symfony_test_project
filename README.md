@@ -14,10 +14,22 @@ You have installed MySQL or MariaDB (most of this will work with other db's but 
 
 ### Let's do this:
 - Clone project into your chosen base directory
-- Run setup.sh to scaffold the project
+    - In terminal navigate to your base directory
+    - `git clone https://github.com/icarlosmendez/symfony_test_project`
+    - `cd` into the project directory
+    - `ls` to verify that you have two files
+        - README.md and setup.sh  
+- Set the projectname variable
+    - In your code editor, open setup.sh and set the projectname variable to your preference
+    - save 
+- Build it
+    - In terminal run setup.sh to scaffold the project
+    - `bash setup.sh`
+    - Watch as the magic happens!
+- What you get 
     - Symfony 2.8 LTS
     - FOSUserBundle 2.0@dev
-- This will culminate with:
+- This build script will culminate with:
     - The launch of your project in the browser
     - The launch of the documentation page for ‘Getting Started With FOSUserBundle’ on the Symfony website
 - From here you will configure FOSUserBundle
