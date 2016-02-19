@@ -36,10 +36,10 @@ _YAML_
 
 filepath: `app/config/config.yml`
 
-    ```
-    framework:
-        translator: { fallbacks: ["%locale%"] }
-    ```
+```
+framework:
+    translator: { fallbacks: ["%locale%"] }
+```
 
 For more information about translations, check Symfony documentation.
 
@@ -62,12 +62,12 @@ _PHP_
 
 filepath: `app/AppKernel.php`
 
-    ```
-    $bundles = array(
-        //...
-        new FOS\UserBundle\FOSUserBundle(),
-        //...
-    ```
+```
+$bundles = array(
+    //...
+    new FOS\UserBundle\FOSUserBundle(),
+    //...
+```
 
 
 #### Step 2: Create your User class
@@ -88,32 +88,32 @@ _Annotations_
 
 filepath: `src/AppBundle/Entity/User.php`
 
-    ```
-    namespace AppBundle\Entity;
+```
+namespace AppBundle\Entity;
 
-    use FOS\UserBundle\Model\User as BaseUser;
-    use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="fos_user")
+ */
+class User extends BaseUser
+{
     /**
-     * @ORM\Entity
-     * @ORM\Table(name="fos_user")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    class User extends BaseUser
-    {
-        /**
-         * @ORM\Id
-         * @ORM\Column(type="integer")
-         * @ORM\GeneratedValue(strategy="AUTO")
-         */
-        protected $id;
+    protected $id;
 
-        public function __construct()
-        {
-            parent::__construct();
-            // your own logic
-        }
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
     }
-    ```
+}
+```
 
 `user` is a reserved keyword in the SQL standard. If you need to use reserved words, surround them with backticks, e.g. @ORM\Table(name=" \`user\` ")
 
@@ -129,35 +129,35 @@ _YAML_
 
 filepath: `app/config/security.yml`
 
-    ```
-    security:
-        encoders:
-            FOS\UserBundle\Model\UserInterface: bcrypt
+```
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
 
-        role_hierarchy:
-            ROLE_ADMIN: ROLE_USER
-            ROLE_SUPER_ADMIN: ROLE_ADMIN
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
 
-        providers:
-            fos_userbundle:
-                id: fos_user.user_provider.username
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
 
-        firewalls:
-            main:
-                pattern: ^/
-                form_login:
-                    provider: fos_userbundle
-                    csrf_token_generator: security.csrf.token_manager
+    firewalls:
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
 
-                logout: true
-                anonymous: true
+            logout: true
+            anonymous: true
 
-        access_control
-             - { path: ^/login$, role:  IS_AUTHENTICATED_ANONYMOUSLY }
-             - { path: ^/register, role:  IS_AUTHENTICATED_ANONYMOUSLY }
-             - { path: ^/resetting, role:  IS_AUTHENTICATED_ANONYMOUSLY }
-             - { path: ^/admin/, role:  ROLE_ADMIN }
-    ```
+    access_control
+         - { path: ^/login$, role:  IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/register, role:  IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/resetting, role:  IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/admin/, role:  ROLE_ADMIN }
+```
 
 
 #### Step 4: Configure the FOSUserBundle
@@ -168,12 +168,12 @@ _YAML_
 
 filepath: `app/config/config.yml`
 
-    ```
-    fos_user:
-        db_driver: orm (other valid values are 'mongodb', 'couchdb' and 'propel')
-        firewall_name: main
-        user_class: AppBundle\Entity\User
-    ```
+```
+fos_user:
+    db_driver: orm (other valid values are 'mongodb', 'couchdb' and 'propel')
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+```
 
 
 #### Step 5: Import FOSUserBundle routing files
@@ -184,10 +184,10 @@ _YAML_
 
 filepath: `app/config/routing.yml`
 
-    ```
-    fos_user:
-        resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-    ```
+```
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+```
 
 In order to use the built-in email functionality (confirmation of the account, resetting of the password), you must activate and configure the SwiftmailerBundle
 
@@ -202,11 +202,11 @@ _YAML_
 
 filepath: `app/config/services.yml`
 
-    ```
-    services:
-        fos_user.doctrine_registry:
-            alias: doctrine
-    ```
+```
+services:
+    fos_user.doctrine_registry:
+        alias: doctrine
+```
 
 
 #### Step 7: Update your database schema
