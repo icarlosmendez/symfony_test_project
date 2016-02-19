@@ -12,12 +12,25 @@ You will be using a database to persist data
 
 You will be using 'Doctrine' ORM
 
-### Prerequisites:
-You have installed PHP >=5.3.9
+### Prerequisites: 
+**These steps are mandatory for working with Symfony**
 
-You have installed MySQL or MariaDB (most of this will work with other db's but no testing has been done)
+- You have installed PHP >=5.3.9
 
-You have installed Composer according to these instructions (Linux and Mac OS X)
+- You have installed MySQL or MariaDB (most of this will work with other db's but no testing has been done)
+
+- You have installed Symfony Installer according to these instructions (Linux and Mac OS X)
+
+    - This will make the Symfony Installer available globally on your system (_best practice/highly recommended_)
+
+```
+sudo curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
+sudo chmod a+x /usr/local/bin/symfony
+```
+
+- You have installed Composer according to these instructions (Linux and Mac OS X)
+
+    - This will make Composer available globally on your system (_best practice/highly recommended_)
 
 ```
 curl -sS https://getcomposer.org/installer | php
@@ -28,7 +41,7 @@ php installer
 sudo mv composer.phar /usr/local/bin/composer
 ```
 
-### Let's do this:
+### Okay! Let's do this:
 - Clone project into your chosen base directory
     - In terminal navigate to your base directory
     - `git clone https://github.com/icarlosmendez/symfony_test_project`
