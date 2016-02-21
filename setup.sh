@@ -71,9 +71,13 @@ echo " Moving the AppKernel.php file into position..."
 mv AppKernel.php symfony_test_project/app/AppKernel.php
 
 # 8.
+# Create a test user
+# Update the database schema. Pushes the user table to your db with the newly created user
 # Run app/console cache:clear to prepare the system for the new configurations
 
 cd symfony_test_project
+app/console fos:user:create testuser test@example.com p@ssword
+app/console doctrine:schema:update --force
 app/console cache:clear
 
 # 9.
