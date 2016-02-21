@@ -60,7 +60,7 @@ mv Resources symfony_test_project/app/Resources
 
 echo
 echo " Moving the config directory into position..."
-mv Resources symfony_test_project/app/config
+mv config symfony_test_project/app/config
 
 echo
 echo " Moving the UserBundle directory into position..."
