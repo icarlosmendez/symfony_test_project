@@ -73,12 +73,12 @@ mv AppKernel.php symfony_test_project/app/AppKernel.php
 # 8.
 # Run app/console cache:clear to prepare the system for the new configurations
 
+cd symfony_test_project
 app/console cache:clear
 
 # 9.
 # Launch the welcome page to your new project in your default browser
 
-cd symfony_test_project
 open http://localhost:8000
 
 # 10.
