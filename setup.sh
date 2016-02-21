@@ -56,27 +56,27 @@ mv Resources symfony_test_project/app/Resources
 
 echo
 echo " Moving the UserBundle directory into position..."
-mv UserBundle Resources symfony_test_project/src/UserBundle
+mv UserBundle symfony_test_project/src/UserBundle
 
 echo
 echo " Moving the AppKernel.php file into position..."
-mv AppKernel.php Resources symfony_test_project/app/AppKernel.php
+mv AppKernel.php symfony_test_project/app/AppKernel.php
 
 # 8.
 # Launch the welcome page to your new project in your default browser
 
-#open http://localhost:8000
+cd symfony_test_project
+open http://localhost:8000
 
 # 9.
 # Launch the documentation for configuring the FOSUserBundle
 
-#open http://symfony.com/doc/current/bundles/FOSUserBundle/index.html
-# I would like to script all of this with Python and just run the python file here.
+open http://symfony.com/doc/current/bundles/FOSUserBundle/index.html
 
 # 10.
 # Fire up the embedded php server bundled with Symfony
 
-#app/console server:run
+app/console server:run
 
 # 11.
 # To begin using your FOSUserBundle follow the documentation at the following URL.
