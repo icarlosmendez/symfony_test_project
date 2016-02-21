@@ -49,17 +49,18 @@ echo " Removing the app/AppKernel.php file"
 # 7.
 # Move the Resources and UserBundle directories and the AppKernel.php file into position
 
+cd ..
 echo
 echo " Moving the Resources directory into position..."
-mv -R Resources app/Resources
+mv Resources symfony_test_project/app/Resources
 
 echo
 echo " Moving the UserBundle directory into position..."
-mv -R UserBundle src/UserBundle
+mv UserBundle Resources symfony_test_project/src/UserBundle
 
 echo
 echo " Moving the AppKernel.php file into position..."
-mv AppKernel.php app/AppKernel.php
+mv AppKernel.php Resources symfony_test_project/app/AppKernel.php
 
 # 8.
 # Launch the welcome page to your new project in your default browser
