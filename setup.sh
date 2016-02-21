@@ -71,22 +71,27 @@ echo " Moving the AppKernel.php file into position..."
 mv AppKernel.php symfony_test_project/app/AppKernel.php
 
 # 8.
+# Run app/console cache:clear to prepare the system for the new configurations
+
+app/console cache:clear
+
+# 9.
 # Launch the welcome page to your new project in your default browser
 
 cd symfony_test_project
 open http://localhost:8000
 
-# 9.
+# 10.
 # Launch the documentation for configuring the FOSUserBundle
 
 open http://symfony.com/doc/current/bundles/FOSUserBundle/index.html
 
-# 10.
+# 11.
 # Fire up the embedded php server bundled with Symfony
 
 app/console server:run
 
-# 11.
+# 12.
 # To begin using your FOSUserBundle follow the documentation at the following URL.
 # It should be open in your browser already
 # http://symfony.com/doc/current/bundles/FOSUserBundle/index.html
