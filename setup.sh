@@ -37,22 +37,33 @@ composer require friendsofsymfony/user-bundle "~2.0@dev"
 composer install
 
 # 6.
-# Launch the welcome page to your new project in your default browser
-
-open http://localhost:8000
+# Remove the current Resources directory and the AppKernel.php file
+rm -R app/Resources
+rm app/AppKernel
 
 # 7.
-# Launch the documentation for configuring the FOSUserBundle
-
-open http://symfony.com/doc/current/bundles/FOSUserBundle/index.html
-# I would like to script all of this with Python and just run the python file here.
+# Move the Resources and UserBundle directories and the AppKernel.php file into position
+mv -R Resources app/Resources
+mv -R UserBundle src/UserBundle
+mv AppKernel app/AppKernel
 
 # 8.
-# Fire up the embedded php server bundled with Symfony
+# Launch the welcome page to your new project in your default browser
 
-app/console server:run
+#open http://localhost:8000
 
 # 9.
-# To configure FOSUserBundle follow the setup at the following URL.
+# Launch the documentation for configuring the FOSUserBundle
+
+#open http://symfony.com/doc/current/bundles/FOSUserBundle/index.html
+# I would like to script all of this with Python and just run the python file here.
+
+# 10.
+# Fire up the embedded php server bundled with Symfony
+
+#app/console server:run
+
+# 11.
+# To begin using your FOSUserBundle follow the documentation at the following URL.
 # It should be open in your browser already
 # http://symfony.com/doc/current/bundles/FOSUserBundle/index.html
