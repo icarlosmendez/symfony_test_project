@@ -71,13 +71,17 @@ echo " Moving the AppKernel.php file into position..."
 mv AppKernel.php symfony_test_project/app/AppKernel.php
 
 # 8.
-# Create a test user
-# Update the database schema. Pushes the user table to your db with the newly created user
 # Run app/console cache:clear to prepare the system for the new configurations
+# Update the database schema. Pushes the user table to your db
+# Create a test user
 
 echo
 echo " Changing to the $projectname directory..."
 cd symfony_test_project
+
+echo
+echo " Clearing the cache and preparing to work..."
+app/console cache:clear
 
 echo
 echo " Updating the database schema using Doctrine..."
@@ -86,10 +90,6 @@ app/console doctrine:schema:update --force
 echo
 echo " Creating testuser and adding to database..."
 app/console fos:user:create testuser test@example.com p@ssword
-
-echo
-echo " Clearing the cache and preparing to work..."
-app/console cache:clear
 
 # 9.
 # Launch the welcome page to your new project in your default browser
