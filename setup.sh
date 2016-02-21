@@ -42,6 +42,10 @@ rm -R app/Resources
 echo
 echo " Removing the app/Resources directory..."
 
+rm -R app/config
+echo
+echo " Removing the app/config directory..."
+
 rm app/AppKernel.php
 echo
 echo " Removing the app/AppKernel.php file"
@@ -53,6 +57,10 @@ cd ..
 echo
 echo " Moving the Resources directory into position..."
 mv Resources symfony_test_project/app/Resources
+
+echo
+echo " Moving the config directory into position..."
+mv Resources symfony_test_project/app/config
 
 echo
 echo " Moving the UserBundle directory into position..."
